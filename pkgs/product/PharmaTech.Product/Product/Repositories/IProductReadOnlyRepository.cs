@@ -4,7 +4,12 @@ public interface IProductReadOnlyRepository
 {
     Task<Models.Product?> GetProductByIdAsync(Guid id);
 
-    Task<IEnumerable<Models.Product>> GetAllProductsWithFilterAsync(Delegate filter, Guid? categoryId = null,
-        Guid? subcategoryId = null, int page = 1, int pageSize = 25);
+    Task<IEnumerable<Models.Product>> GetAllProductsWithFilterAsync(
+        Delegate filter,
+        Guid? categoryId = null,
+        Guid? subcategoryId = null,
+        int page = 1,
+        int pageSize = 25
+    );
     Task<(int TotalProducts, int TotalCategories, int TotalSubcategories)> GetTotalAsync();
 }
