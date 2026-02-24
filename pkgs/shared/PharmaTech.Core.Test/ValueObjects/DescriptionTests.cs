@@ -7,7 +7,8 @@ public class DescriptionTests
     [Fact]
     public void Create_should_fail_when_too_short()
     {
-        var result = Description.Create("short description");
+        var shortDescription = "a";
+        var result = Description.Create(shortDescription);
 
         Assert.True(result.IsFailure);
         Assert.Contains("DESCRIPTION_TOO_SHORT", result.Errors);
