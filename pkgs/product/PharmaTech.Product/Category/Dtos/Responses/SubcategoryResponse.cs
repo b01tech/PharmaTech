@@ -1,3 +1,9 @@
-﻿namespace PharmaTech.Product.Category.Dtos.Responses;
+﻿using PharmaTech.Product.Category.Models;
 
-public record SubcategoryResponse(string Name, string Alias);
+namespace PharmaTech.Product.Category.Dtos.Responses;
+
+public record SubcategoryResponse(string Name, string Alias)
+{
+    public static SubcategoryResponse FromModel(Subcategory subcategory) =>
+        new(subcategory.Name.Value, subcategory.Alias.Value);
+}
