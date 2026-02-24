@@ -10,9 +10,12 @@ public record Sku
 
     public string Value { get; }
 
-    private Sku(string sku)
+    // EF Constructor
+    protected Sku() { }
+
+    private Sku(string value)
     {
-        Value = sku;
+        Value = value;
     }
 
     public static Result<Sku> Create(string value)
