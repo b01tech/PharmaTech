@@ -7,7 +7,7 @@ namespace PharmaTech.Product.Category.UseCases;
 public class RemoveSubcategoryUseCase(
     ICategoryWriteRepository writeRepository,
     ICategoryReadOnlyRepository readRepository
-) : IUseCase<Guid, Result>
+) : IRemoveSubcategoryUseCase
 {
     public async Task<Result> ExecuteAsync(Guid request)
     {

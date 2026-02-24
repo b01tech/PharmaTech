@@ -6,7 +6,7 @@ using PharmaTech.Product.Category.Repositories;
 namespace PharmaTech.Product.Category.UseCases;
 
 public class CreateCategoryUseCase(ICategoryWriteRepository writeRepository)
-    : IUseCase<CreateCategoryRequest, Result<CategoryResponse>>
+    : ICreateCategoryUseCase
 {
     public async Task<Result<CategoryResponse>> ExecuteAsync(CreateCategoryRequest request)
     {

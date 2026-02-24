@@ -10,7 +10,7 @@ namespace PharmaTech.Product.Category.UseCases;
 public class CreateSubcategoryUseCase(
     ICategoryWriteRepository writeRepository,
     ICategoryReadOnlyRepository readRepository
-) : IUseCase<CreateSubcategoryRequest, Result<SubcategoryResponse>>
+) : ICreateSubcategoryUseCase
 {
     public async Task<Result<SubcategoryResponse>> ExecuteAsync(CreateSubcategoryRequest request)
     {

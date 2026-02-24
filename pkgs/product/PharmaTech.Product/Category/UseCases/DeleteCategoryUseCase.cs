@@ -5,7 +5,7 @@ using PharmaTech.Product.Category.Repositories;
 namespace PharmaTech.Product.Category.UseCases;
 
 public class DeleteCategoryUseCase(ICategoryWriteRepository writeRepository, ICategoryReadOnlyRepository readRepository)
-    : IUseCase<Guid, Result>
+    : IDeleteCategoryUseCase
 {
     public async Task<Result> ExecuteAsync(Guid id)
     {
