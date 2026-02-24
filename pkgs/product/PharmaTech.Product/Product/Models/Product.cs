@@ -44,4 +44,30 @@ public class Product : Entity
 
         return new Product(name.Data, alias.Data, description.Data, sku.Data, price, subcategoryId);
     }
+
+    public Result Update(
+        string nameInput,
+        string aliasInput,
+        string descriptionInput,
+        string skuInput,
+        decimal price,
+        Guid subcategoryId
+    )
+    {
+        var name = Core.ValueObjects.Name.Create(nameInput);
+        var alias = Core.ValueObjects.Alias.Create(aliasInput);
+        var description = Core.ValueObjects.Description.Create(descriptionInput);
+        var sku = Core.ValueObjects.Sku.Create(skuInput);
+        if (name.IsFailure || alias.IsFailure || description.IsFailure || sku.IsFailure)
+            return Result.Failure(Result.MergeErrors(name, alias, description, sku));
+
+        Name = name.Data;
+        Alias = alias.Data;
+        Description = description.Data;
+        Sku = sku.Data;
+        Price = price;
+        SubcategoryId = subcategoryId;
+
+        return Result.Success();
+    }
 }
