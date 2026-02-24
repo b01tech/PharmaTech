@@ -63,12 +63,12 @@ import { Product } from '../models/product.model';
                   <div class="flex space-x-3">
                     <a
                       [routerLink]="['/products', product.id, 'edit']"
-                      class="text-blue-600 hover:text-blue-900 font-medium"
+                      class="text-blue-600 hover:text-blue-900 font-medium cursor-pointer"
                       >Editar</a
                     >
                     <button
                       (click)="deleteProduct(product.id)"
-                      class="text-red-600 hover:text-red-900 font-medium"
+                      class="text-red-600 hover:text-red-900 font-medium cursor-pointer"
                     >
                       Excluir
                     </button>
@@ -89,26 +89,28 @@ import { Product } from '../models/product.model';
         </table>
       </div>
 
-      <div class="mt-4 flex justify-between items-center" *ngIf="totalPages() > 1">
-        <button
-          [disabled]="page() === 1"
-          (click)="changePage(page() - 1)"
-          class="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
-        >
-          Anterior
-        </button>
-        <span class="text-gray-700"
-          >Página <span class="font-bold">{{ page() }}</span> de
-          <span class="font-bold">{{ totalPages() }}</span></span
-        >
-        <button
-          [disabled]="page() === totalPages()"
-          (click)="changePage(page() + 1)"
-          class="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
-        >
-          Próxima
-        </button>
-      </div>
+      @if (totalPages() > 1) {
+        <div class="mt-4 flex justify-between items-center">
+          <button
+            [disabled]="page() === 1"
+            (click)="changePage(page() - 1)"
+            class="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
+          >
+            Anterior
+          </button>
+          <span class="text-gray-700"
+            >Página <span class="font-bold">{{ page() }}</span> de
+            <span class="font-bold">{{ totalPages() }}</span></span
+          >
+          <button
+            [disabled]="page() === totalPages()"
+            (click)="changePage(page() + 1)"
+            class="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
+          >
+            Próxima
+          </button>
+        </div>
+      }
     </div>
   `,
 })

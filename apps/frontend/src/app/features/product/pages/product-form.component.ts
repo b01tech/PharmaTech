@@ -200,7 +200,7 @@ export class ProductFormComponent {
 
   loadCategories() {
     this.categoryService.getAll(1, 100).subscribe((res) => {
-      this.categories.set(res.items);
+      this.categories.set(res);
     });
   }
 
