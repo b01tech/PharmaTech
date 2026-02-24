@@ -6,12 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddApiDocumentation()
     .AddInfrastructure(builder.Configuration)
-    .AddApplication();
+    .AddApplication()
+    .AddCorsPolicy();
 
 var app = builder.Build();
 
 await app.Services.InitializeDatabaseAsync();
 
+app.UseCors("AllowAll");
 app.UseApiDocumentation();
 app.UseHttpsRedirection();
 app.MapEndpoints();
