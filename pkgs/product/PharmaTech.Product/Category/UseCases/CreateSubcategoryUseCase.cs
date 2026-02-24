@@ -12,13 +12,13 @@ public class CreateSubcategoryUseCase(
     ICategoryReadOnlyRepository readRepository
 ) : ICreateSubcategoryUseCase
 {
-    public async Task<Result<SubcategoryResponse>> ExecuteAsync(CreateSubcategoryRequest request)
+    public async Task<Result<SubcategoryResponse>> ExecuteAsync(CreateSubcategoryRequest request, Guid categoryId)
     {
-        var category = await readRepository.GetCategoryByIdAsync(request.CategoryId);
+        var category = await readRepository.GetCategoryByIdAsync(categoryId);
         if (category is null)
             return Result<SubcategoryResponse>.Failure(CategoryErrors.NotFound);
 
-        var subcategoryResult = Subcategory.Create(request.Name, request.Alias, request.CategoryId);
+        var subcategoryResult = Subcategory.Create(request.Name, request.Alias, categoryId);
         if (subcategoryResult.IsFailure)
             return Result<SubcategoryResponse>.Failure(subcategoryResult.Errors);
 
