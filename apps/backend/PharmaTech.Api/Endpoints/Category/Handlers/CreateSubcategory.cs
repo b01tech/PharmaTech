@@ -11,10 +11,7 @@ public static class CreateSubcategory
         [FromBody] CreateSubcategoryRequest request,
         [FromServices] ICreateSubcategoryUseCase useCase)
     {
-        if (id != request.CategoryId)
-            return Results.BadRequest("Category Id mismatch");
-
-        var result = await useCase.ExecuteAsync(request);
+        var result = await useCase.ExecuteAsync(request, id);
         return result.IsSuccess ? Results.Created(string.Empty, result.Data) : Results.BadRequest(result.Errors);
     }
 }
