@@ -5,7 +5,7 @@ namespace PharmaTech.Api.Endpoints.Product;
 
 public static class ProductEndpoint
 {
-    private const string RoutePrefix = "products";
+    private const string RoutePrefix = "api/products";
 
     public static void MapProductEndpoint(this IEndpointRouteBuilder app)
     {

@@ -5,7 +5,7 @@ namespace PharmaTech.Api.Endpoints.Category;
 
 public static class CategoryEndpoint
 {
-    private const string RoutePrefix = "categories";
+    private const string RoutePrefix = "api/categories";
 
     public static void MapCategoryEndpoint(this IEndpointRouteBuilder app)
     {
