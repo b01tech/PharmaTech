@@ -8,7 +8,7 @@ public record Description : Text
     const int DefaultMinLenght = 5;
     const int DefaultMaxLenght = 255;
 
-    public Description(string value)
+    private Description(string value)
         : base(value) { }
 
     public static Result<Description> Create(string value)

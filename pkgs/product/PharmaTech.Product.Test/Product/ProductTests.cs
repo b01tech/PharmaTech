@@ -8,7 +8,7 @@ public class ProductTests
     [Fact]
     public void Create_should_fail_when_name_is_invalid()
     {
-        var result = ProductModel.Create("ab", "Valid Alias", new string('a', 50), "abc-123", 10m, Guid.NewGuid());
+        var result = ProductModel.Create("ab", "Valid Alias", new string('a', 50), "abc-123", 10m, Guid.CreateVersion7());
 
         Assert.True(result.IsFailure);
         Assert.Contains("NAME_TOO_SHORT", result.Errors);
@@ -17,7 +17,7 @@ public class ProductTests
     [Fact]
     public void Create_should_fail_when_alias_is_invalid()
     {
-        var result = ProductModel.Create("Valid Name", " ", new string('a', 50), "abc-123", 10m, Guid.NewGuid());
+        var result = ProductModel.Create("Valid Name", " ", new string('a', 50), "abc-123", 10m, Guid.CreateVersion7());
 
         Assert.True(result.IsFailure);
         Assert.Contains("INVALID_ALIAS", result.Errors);
@@ -29,10 +29,10 @@ public class ProductTests
         var result = ProductModel.Create(
             "Valid Name",
             "Valid Alias",
-            "short description",
+            "abcd",
             "abc-123",
             10m,
-            Guid.NewGuid()
+            Guid.CreateVersion7()
         );
 
         Assert.True(result.IsFailure);
@@ -42,7 +42,7 @@ public class ProductTests
     [Fact]
     public void Create_should_fail_when_sku_is_invalid()
     {
-        var result = ProductModel.Create("Valid Name", "Valid Alias", new string('a', 50), " ", 10m, Guid.NewGuid());
+        var result = ProductModel.Create("Valid Name", "Valid Alias", new string('a', 50), " ", 10m, Guid.CreateVersion7());
 
         Assert.True(result.IsFailure);
         Assert.Contains("INVALID_SKU", result.Errors);
@@ -51,7 +51,7 @@ public class ProductTests
     [Fact]
     public void Create_should_fail_with_combined_errors_when_all_are_invalid()
     {
-        var result = ProductModel.Create("ab", " ", "short description", " ", 10m, Guid.NewGuid());
+        var result = ProductModel.Create("ab", " ", "abcd", " ", 10m, Guid.CreateVersion7());
 
         Assert.True(result.IsFailure);
         Assert.Contains("NAME_TOO_SHORT", result.Errors);
@@ -63,7 +63,7 @@ public class ProductTests
     [Fact]
     public void Create_should_succeed_for_valid_inputs()
     {
-        var subcategoryId = Guid.NewGuid();
+        var subcategoryId = Guid.CreateVersion7();
 
         var result = ProductModel.Create(
             "Valid Name",

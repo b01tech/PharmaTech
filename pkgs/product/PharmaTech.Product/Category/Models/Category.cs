@@ -32,4 +32,18 @@ public class Category : Entity
     public void Add(Subcategory subcategory) => Subcategories.Add(subcategory);
 
     public void Remove(Subcategory subcategory) => Subcategories.Remove(subcategory);
+
+    public Result Update(string nameInput, string aliasInput)
+    {
+        var name = Core.ValueObjects.Name.Create(nameInput);
+        var alias = Core.ValueObjects.Alias.Create(aliasInput);
+
+        if (name.IsFailure || alias.IsFailure)
+            return Result.Failure(Result.MergeErrors(name, alias));
+
+        Name = name.Data;
+        Alias = alias.Data;
+
+        return Result.Success();
+    }
 }
