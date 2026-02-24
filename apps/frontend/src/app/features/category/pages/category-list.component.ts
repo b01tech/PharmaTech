@@ -85,7 +85,7 @@ import { Category } from '../models/category.model';
           <button
             [disabled]="page() === 1"
             (click)="changePage(page() - 1)"
-            class="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
+            class="bg-white border border-gray-300 cursor-pointer hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
           >
             Anterior
           </button>
@@ -96,7 +96,7 @@ import { Category } from '../models/category.model';
           <button
             [disabled]="page() === totalPages()"
             (click)="changePage(page() + 1)"
-            class="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
+            class="bg-white border border-gray-300 cursor-pointer hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
           >
             Próxima
           </button>
