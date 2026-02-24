@@ -5,7 +5,7 @@ namespace PharmaTech.Core.ValueObjects;
 public record Description : Text
 {
     private const string Tag = "DESCRIPTION";
-    const int DefaultMinLenght = 20;
+    const int DefaultMinLenght = 5;
     const int DefaultMaxLenght = 255;
 
     public Description(string value)
