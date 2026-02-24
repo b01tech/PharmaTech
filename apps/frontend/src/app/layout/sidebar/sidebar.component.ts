@@ -9,7 +9,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   template: `
     <aside class="w-64 bg-gray-900 text-white min-h-screen flex flex-col">
       <div class="h-16 flex items-center justify-center border-b border-gray-800">
-        <h1 class="text-2xl font-bold text-blue-400">PharmaTech</h1>
+        <a routerLink="/" class="flex items-center justify-center">
+          <img src="pharma-logo.png" alt="PharmaTech" class="h-36 w-auto p-2 cursor-pointer" />
+        </a>
       </div>
 
       <nav class="flex-1 px-4 py-6 space-y-2">
