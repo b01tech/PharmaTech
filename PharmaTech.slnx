@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/apps/" />
+  <Folder Name="/apps/backend/">
+    <Project Path="apps/backend/PharmaTech.Api/PharmaTech.Api.csproj" />
+    <Project Path="apps/backend/PharmaTech.Infra/PharmaTech.Infra.csproj" />
+  </Folder>
   <Folder Name="/pkgs/" />
   <Folder Name="/pkgs/product/">
     <Project Path="pkgs/product/PharmaTech.Product.Test/PharmaTech.Product.Test.csproj" />
