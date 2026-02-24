@@ -1,13 +1,12 @@
-using Microsoft.EntityFrameworkCore;
 using PharmaTech.Api.Extensions;
-using PharmaTech.Infra.Data;
 using PharmaTech.Infra.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddApiDocumentation()
-    .AddInfrastructure(builder.Configuration);
+    .AddInfrastructure(builder.Configuration)
+    .AddApplication();
 
 var app = builder.Build();
 
