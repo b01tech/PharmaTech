@@ -1,11 +1,13 @@
-﻿namespace PharmaTech.Product.Product.Repositories;
+using System.Linq.Expressions;
+
+namespace PharmaTech.Product.Product.Repositories;
 
 public interface IProductReadOnlyRepository
 {
     Task<Models.Product?> GetProductByIdAsync(Guid id);
 
     Task<IEnumerable<Models.Product>> GetAllProductsWithFilterAsync(
-        Delegate filter,
+        Expression<Func<Models.Product, bool>>? filter,
         Guid? categoryId = null,
         Guid? subcategoryId = null,
         int page = 1,
