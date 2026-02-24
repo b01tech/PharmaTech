@@ -2,7 +2,7 @@
 
 public static class ApiHealthEndpoint
 {
-    public static void MapApiHealthEndpoint(this WebApplication app)
+    public static void MapApiHealthEndpoint(this IEndpointRouteBuilder app)
     {
         app.MapGet("/health", () => Results.Ok(new { status = "Ok" }))
             .WithName("ApiHealthCheck")
