@@ -8,6 +8,12 @@ export interface Category {
   id: string;
   name: string;
   alias: string;
+}
+
+export interface CategoryDetailed {
+  id: string;
+  name: string;
+  alias: string;
   subcategories: Subcategory[];
 }
 

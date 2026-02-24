@@ -11,11 +11,11 @@ export class CategoryService {
   private readonly _http = inject(HttpClient);
   private readonly _apiUrl = `${environment.apiUrl}/api/categories`;
 
-  getAll(page: number = 1, pageSize: number = 10): Observable<CategoryListResponse> {
+  getAll(page: number = 1, pageSize: number = 10): Observable<Category[]> {
     const params = new HttpParams()
       .set('page', page.toString())
       .set('pageSize', pageSize.toString());
-    return this._http.get<CategoryListResponse>(this._apiUrl, { params });
+    return this._http.get<Category[]>(this._apiUrl, { params });
   }
 
   getById(id: string): Observable<Category> {
