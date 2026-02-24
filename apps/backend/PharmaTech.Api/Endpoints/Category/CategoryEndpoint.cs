@@ -30,5 +30,24 @@ public static class CategoryEndpoint
             .Produces(StatusCodes.Status204NoContent)
             .ProducesValidationProblem()
             .WithSummary("Delete a subcategory");
+
+        group.MapPut("/{id}", UpdateCategory.Handle)
+            .Produces<CategoryResponse>(StatusCodes.Status200OK)
+            .ProducesValidationProblem()
+            .WithSummary("Update a category");
+
+        group.MapGet("/{id}", FindCategoryById.Handle)
+            .Produces<CategoryDetailedResponse>(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status404NotFound)
+            .WithSummary("Get a category by id");
+
+        group.MapGet("/", FindAllCategories.Handle)
+            .Produces<IEnumerable<CategoryResponse>>(StatusCodes.Status200OK)
+            .WithSummary("Get all categories");
+
+        group.MapGet("/{id}/subcategories", FindSubcategories.Handle)
+            .Produces<IEnumerable<SubCategoryDetailedResponse>>(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status404NotFound)
+            .WithSummary("Get all subcategories for a category");
     }
 }
