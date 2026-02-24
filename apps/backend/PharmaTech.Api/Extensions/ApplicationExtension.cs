@@ -1,4 +1,4 @@
-﻿using PharmaTech.Product.Category.UseCases;
+using PharmaTech.Product.Category.UseCases;
 using PharmaTech.Product.Product.UseCases;
 
 namespace PharmaTech.Api.Extensions;
@@ -17,6 +17,10 @@ public static class ApplicationExtension
         services.AddScoped<ICreateSubcategoryUseCase, CreateSubcategoryUseCase>();
         services.AddScoped<IDeleteCategoryUseCase, DeleteCategoryUseCase>();
         services.AddScoped<IRemoveSubcategoryUseCase, RemoveSubcategoryUseCase>();
+        services.AddScoped<IUpdateCategoryUseCase, UpdateCategoryUseCase>();
+        services.AddScoped<IFindCategoryByIdUseCase, FindCategoryByIdUseCase>();
+        services.AddScoped<IFindAllCategoriesUseCase, FindAllCategoriesUseCase>();
+        services.AddScoped<IFindSubcategoriesUseCase, FindSubcategoriesUseCase>();
 
         services.AddScoped<ICreateProductUseCase, CreateProductUseCase>();
         services.AddScoped<IDeleteProductUseCase, DeleteProductUseCase>();
