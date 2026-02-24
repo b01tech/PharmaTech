@@ -9,7 +9,7 @@ public record Text
     const int DefaultMinLenght = 1;
     const int DefaultMaxLenght = int.MaxValue;
 
-    string Value { get; }
+    public string Value { get; }
 
     protected Text(string value)
     {
