@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/pkgs/" />
+  <Folder Name="/pkgs/Shared/" />
+  <Folder Name="/pkgs/Shared/src/">
+    <Project Path="pkgs/Shared/src/PharmaTech.Shared/PharmaTech.Shared.csproj" />
+  </Folder>
+  <Folder Name="/pkgs/Shared/test/">
+    <Project Path="pkgs/Shared/test/PharmaTech.Shared.Tests/PharmaTech.Shared.Tests.csproj" />
+  </Folder>
+</Solution>
