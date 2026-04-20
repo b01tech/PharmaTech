@@ -14,6 +14,8 @@ public record Description : Text
     public static Result<Description> Create(string value)
     {
         var result = Text.Create(value, DefaultMinLenght, DefaultMaxLenght, Tag);
-        return result.IsFailure ? Result<Description>.Failure(result.Errors) : new Description(value);
+        return result.IsFailure ? Result<Description>.Failure(result.Errors) : new Description(result.Data.Value);
     }
+
+    public override string ToString() => Value;
 }

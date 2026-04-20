@@ -14,6 +14,8 @@ public record Name : Text
     public static Result<Name> Create(string value)
     {
         var result = Text.Create(value, DefaultMinLenght, DefaultMaxLenght, Tag);
-        return result.IsFailure ? Result<Name>.Failure(result.Errors) : new Name(value);
+        return result.IsFailure ? Result<Name>.Failure(result.Errors) : new Name(result.Data.Value);
     }
+
+    public override string ToString() => Value;
 };
