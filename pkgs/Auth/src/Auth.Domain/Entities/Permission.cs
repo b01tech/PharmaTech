@@ -1,7 +1,7 @@
-using PharmaTech.Auth.Domain.Enums;
+using Auth.Domain.Enums;
 using PharmaTech.Shared.Core;
 
-namespace PharmaTech.Auth.Domain.Entities;
+namespace Auth.Domain.Entities;
 
 public class Permission : Entity
 {

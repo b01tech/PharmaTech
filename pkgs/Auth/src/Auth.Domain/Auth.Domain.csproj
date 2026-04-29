@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\PharmaTech.Shared\PharmaTech.Shared.csproj" />
+    <ProjectReference Include="..\..\..\Shared\PharmaTech.Shared\PharmaTech.Shared.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>

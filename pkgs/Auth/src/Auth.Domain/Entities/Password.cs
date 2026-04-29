@@ -1,6 +1,6 @@
 using PharmaTech.Shared.Core;
 
-namespace PharmaTech.Auth.Domain.Entities;
+namespace Auth.Domain.Entities;
 
 public class Password : Entity
 {

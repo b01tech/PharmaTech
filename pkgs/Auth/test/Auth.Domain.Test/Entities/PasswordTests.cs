@@ -1,6 +1,6 @@
-using PharmaTech.Auth.Domain.Entities;
+using Auth.Domain.Entities;
 
-namespace PharmaTech.Auth.Test.Domain.Entities;
+namespace Auth.Domain.Test.Entities;
 
 public class PasswordTests
 {

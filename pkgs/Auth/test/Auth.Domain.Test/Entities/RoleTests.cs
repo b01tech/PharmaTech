@@ -1,8 +1,8 @@
-using PharmaTech.Auth.Domain.Entities;
-using ActionEnum = PharmaTech.Auth.Domain.Enums.Action;
-using ModuleEnum = PharmaTech.Auth.Domain.Enums.Module;
+using Auth.Domain.Entities;
+using ActionEnum = Auth.Domain.Enums.Action;
+using ModuleEnum = Auth.Domain.Enums.Module;
 
-namespace PharmaTech.Auth.Test.Domain.Entities;
+namespace Auth.Domain.Test.Entities;
 
 public class RoleTests
 {

@@ -1,7 +1,7 @@
 using PharmaTech.Shared.Core;
 using PharmaTech.Shared.ValueObjects;
 
-namespace PharmaTech.Auth.Domain.Entities;
+namespace Auth.Domain.Entities;
 
 public class User : Entity
 {

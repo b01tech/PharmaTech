@@ -1,4 +1,4 @@
-namespace PharmaTech.Auth.Domain.Enums;
+namespace Auth.Domain.Enums;
 
 public enum Action
 {
