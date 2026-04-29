@@ -1,0 +1,11 @@
+<Solution>
+	<Folder Name="/pkgs/" />
+	<Folder Name="/pkgs/Auth/">
+		<Project Path="pkgs/Auth/PharmaTech.Auth.Test/PharmaTech.Auth.Test.csproj" />
+		<Project Path="pkgs/Auth/PharmaTech.Auth/PharmaTech.Auth.csproj" />
+	</Folder>
+	<Folder Name="/pkgs/Shared/">
+		<Project Path="pkgs/Shared/PharmaTech.Shared.Test/PharmaTech.Shared.Test.csproj" />
+		<Project Path="pkgs/Shared/PharmaTech.Shared/PharmaTech.Shared.csproj" />
+	</Folder>
+</Solution>
