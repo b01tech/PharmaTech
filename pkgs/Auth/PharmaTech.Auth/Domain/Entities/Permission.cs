@@ -1,8 +1,9 @@
 using PharmaTech.Auth.Domain.Enums;
+using PharmaTech.Shared.Core;
 
 namespace PharmaTech.Auth.Domain.Entities;
 
-public class Permission
+public class Permission : Entity
 {
     #region Properties
     public string Module { get; private set; } = string.Empty;
