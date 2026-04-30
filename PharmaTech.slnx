@@ -2,9 +2,12 @@
 	<Folder Name="/pkgs/" />
 	<Folder Name="/pkgs/Auth/" />
 	<Folder Name="/pkgs/Auth/src/">
+		<Project Path="pkgs/Auth/src/Auth.Application/Auth.Application.csproj" />
 		<Project Path="pkgs/Auth/src/Auth.Domain/Auth.Domain.csproj" />
+		<Project Path="pkgs/Auth/src/Auth.Infrastructure/Auth.Infrastructure.csproj" />
 	</Folder>
 	<Folder Name="/pkgs/Auth/test/">
+		<Project Path="pkgs/Auth/test/Auth.Application.Test/Auth.Application.Test.csproj" />
 		<Project Path="pkgs/Auth/test/Auth.Domain.Test/Auth.Domain.Test.csproj" />
 	</Folder>
 	<Folder Name="/pkgs/Shared/">
