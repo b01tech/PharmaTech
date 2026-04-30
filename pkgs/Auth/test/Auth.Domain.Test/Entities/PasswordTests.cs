@@ -7,18 +7,19 @@ public class PasswordTests
     private static readonly Guid UserId = Guid.CreateVersion7();
 
     [Fact]
-    public void Constructor_Should_Set_Hash_And_UserId()
+    public void Create_Should_Set_Hash_And_UserId()
     {
-        var password = new Password("hashed_value", UserId);
+        var password = Password.Create("hashed_value", UserId);
 
-        Assert.Equal("hashed_value", password.Hash);
-        Assert.Equal(UserId, password.UserId);
+        Assert.Equal("hashed_value", password.Data.Hash);
+        Assert.Equal(UserId, password.Data.UserId);
     }
 
     [Fact]
     public void AddRecentHash_Should_Add_To_List()
     {
-        var password = new Password("hash1", UserId);
+        var passwordResult = Password.Create("hash1", UserId);
+        var password = passwordResult.Data;
         password.AddRecentHash("hash1");
 
         Assert.Single(password.RecentHashes);
@@ -28,7 +29,8 @@ public class PasswordTests
     [Fact]
     public void AddRecentHash_Should_Remove_Oldest_When_Full()
     {
-        var password = new Password("hash1", UserId);
+        var passwordResult = Password.Create("hash1", UserId);
+        var password = passwordResult.Data;
         password.AddRecentHash("hash2");
         password.AddRecentHash("hash3");
         password.AddRecentHash("hash4");
@@ -42,7 +44,8 @@ public class PasswordTests
     [Fact]
     public void RecentHashes_Should_Start_Empty()
     {
-        var password = new Password("hash", UserId);
+        var passwordResult = Password.Create("hash", UserId);
+        var password = passwordResult.Data;
 
         Assert.Empty(password.RecentHashes);
     }
@@ -50,7 +53,8 @@ public class PasswordTests
     [Fact]
     public void AddRecentHash_Should_Maintain_Order()
     {
-        var password = new Password("hash0", UserId);
+        var passwordResult = Password.Create("hash0", UserId);
+        var password = passwordResult.Data;
         password.AddRecentHash("hash1");
         password.AddRecentHash("hash2");
 

@@ -11,17 +11,26 @@ public class Password : Entity
     #region Properties
     public string Hash { get; private set; } = string.Empty;
     public Guid UserId { get; private set; }
-    public List<string> RecentHashes { get; private set; } = new List<string>();
+    public List<string> RecentHashes { get; private set; } = new();
     #endregion
 
     #region Constructors
     // EF Core
     protected Password() { }
 
-    public Password(string hash, Guid userId)
+    private Password(string hash, Guid userId)
     {
         Hash = hash;
         UserId = userId;
+    }
+
+    public static Result<Password> Create(string hash, Guid userId)
+    {
+        if (string.IsNullOrEmpty(hash))
+            return Result<Password>.Failure("Hash é obrigatório");
+        if (userId == Guid.Empty)
+            return Result<Password>.Failure("UserId é obrigatório");
+        return new Password(hash, userId);
     }
     #endregion
 
