@@ -5,6 +5,6 @@ namespace Auth.Domain.Repositories;
 public interface IUserReadOnlyRepository
 {
     Task<User?> GetByIdAsync(Guid id);
-    Task<List<User>> GetAllAsync(int page, int pageSize);
+    Task<IList<User>> GetAllAsync(int page, int pageSize);
     Task<int> GetCountAsync();
 }

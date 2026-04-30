@@ -25,7 +25,7 @@ internal class RoleRepository(IAuthDbContext dbContext) : IRoleRepository
         return await dbContext.Roles.FirstOrDefaultAsync(r => r.Id == id);
     }
 
-    public async Task<List<Role>> GetAllAsync()
+    public async Task<IList<Role>> GetAllAsync()
     {
         return await dbContext.Roles.ToListAsync();
     }

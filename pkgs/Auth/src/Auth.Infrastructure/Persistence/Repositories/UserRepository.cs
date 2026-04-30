@@ -12,7 +12,7 @@ internal class UserRepository(IAuthDbContext dbContext) : IUserReadOnlyRepositor
         return await dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
     }
 
-    public async Task<List<User>> GetAllAsync(int page, int pageSize)
+    public async Task<IList<User>> GetAllAsync(int page, int pageSize)
     {
         return await dbContext.Users.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
     }
