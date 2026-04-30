@@ -5,8 +5,8 @@ namespace PharmaTech.Shared.ValueObjects;
 public record Name : Text
 {
     private const string Tag = "NAME";
-    const int DefaultMinLenght = 3;
-    const int DefaultMaxLenght = 50;
+    public const int DefaultMinLenght = 3;
+    public const int DefaultMaxLenght = 50;
 
     private Name(string value)
         : base(value) { }
